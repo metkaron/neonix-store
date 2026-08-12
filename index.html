@@ -4,85 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NEONIX — Магазин электроники</title>
+    <title>NEXORA — Premium Tech & Gaming</title>
+
+    <meta
+        name="description"
+        content="NEXORA — премиальный магазин компьютерной техники и gaming-электроники."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================================
-     HEADER
-========================================= -->
+<!-- ================= HEADER ================= -->
 
-<header class="header">
+<header class="header" id="header">
 
-    <div class="container header-inner">
+    <div class="container nav">
 
-        <a href="#" class="logo">
-            <span class="logo-mark">N</span>
-            <span>NEONIX</span>
+        <a href="#home" class="logo">
+            <span>NEXORA</span>
+            <small>TECH / GAMING</small>
         </a>
 
-
-        <nav class="nav">
-
+        <nav class="desktop-nav">
             <a href="#home">Главная</a>
             <a href="#catalog">Каталог</a>
-            <a href="#new">Новинки</a>
-            <a href="#about">О нас</a>
-
+            <a href="#gaming">Игровые ПК</a>
+            <a href="#laptops">Ноутбуки</a>
+            <a href="#components">Комплектующие</a>
+            <a href="#deals">Акции</a>
         </nav>
 
+        <div class="nav-actions">
 
-        <div class="header-actions">
-
-            <button
-    class="header-btn theme-btn"
-    id="themeButton"
-    title="Переключить тему">
-    ☀️
-</button>
-
-            <button
-                class="header-btn"
-                id="searchButton"
-                title="Поиск">
-
-                🔎
-
+            <button class="icon-btn" id="searchBtn" aria-label="Поиск">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-4-4"></path>
+                </svg>
             </button>
 
-
-            <button
-                class="header-btn"
-                id="favoritesButton"
-                title="Избранное">
-
-                ♡
-
-                <span
-                    class="counter"
-                    id="favoritesCount">
-                    0
-                </span>
-
+            <button class="icon-btn account-btn" aria-label="Аккаунт">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"></path>
+                </svg>
             </button>
 
+            <button class="cart-btn" id="cartBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4h2l2 12h11l2-8H6"></path>
+                    <circle cx="9" cy="20" r="1"></circle>
+                    <circle cx="18" cy="20" r="1"></circle>
+                </svg>
 
-            <button
-                class="header-btn"
-                id="cartButton"
-                title="Корзина">
+                <span>Корзина</span>
+                <b id="cartCount">0</b>
+            </button>
 
-                🛒
-
-                <span
-                    class="counter"
-                    id="cartCount">
-                    0
-                </span>
-
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
         </div>
@@ -92,61 +84,97 @@
 </header>
 
 
-<!-- =========================================
-     HERO
-========================================= -->
+<!-- ================= MOBILE MENU ================= -->
 
-<main>
+<div class="mobile-menu" id="mobileMenu">
 
-<section
-    class="hero"
-    id="home">
+    <div class="mobile-menu-inner">
 
-    <div class="container hero-grid">
+        <a href="#home">Главная</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#gaming">Игровые ПК</a>
+        <a href="#laptops">Ноутбуки</a>
+        <a href="#components">Комплектующие</a>
+        <a href="#deals">Акции</a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-window">
+
+        <button class="close-btn" id="closeSearch">×</button>
+
+        <span class="eyebrow">NEXORA SEARCH</span>
+
+        <h2>Найди свою<br><span>технику.</span></h2>
+
+        <div class="search-input-wrap">
+
+            <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+            </svg>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Поиск товаров..."
+                autocomplete="off"
+            >
+
+        </div>
+
+        <div class="search-results" id="searchResults"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="hero-grid container">
 
         <div class="hero-content">
 
-            <div class="eyebrow">
-                NEONIX / 2026
-            </div>
-
+            <span class="eyebrow">
+                NEXORA TECH / GAMING
+            </span>
 
             <h1>
-                ТЕХНОЛОГИИ
-                <span>БЕЗ ГРАНИЦ</span>
+                POWER
+                <span>WITHOUT</span>
+                LIMITS.
             </h1>
 
-
-            <p>
-                Смартфоны, ноутбуки, игровые ПК,
-                мониторы и аксессуары.
-                Всё самое интересное в одном месте.
+            <p class="hero-description">
+                Игровые ПК, ноутбуки и техника нового поколения.
+                Создавай. Играй. Побеждай.
             </p>
-
 
             <div class="hero-buttons">
 
-                <a
-                    href="#catalog"
-                    class="btn btn-primary">
-
-                    Смотреть каталог
-
-                    <span>→</span>
-
+                <a href="#catalog" class="btn btn-primary">
+                    Смотреть игровые ПК
+                    <span>↗</span>
                 </a>
 
-
-                <button
-                    class="btn btn-outline"
-                    id="randomProduct">
-
-                    Случайный товар
-
-                </button>
+                <a href="#laptops" class="btn btn-outline">
+                    Смотреть ноутбуки
+                    <span>↗</span>
+                </a>
 
             </div>
-
 
             <div class="hero-stats">
 
@@ -161,8 +189,8 @@
                 </div>
 
                 <div>
-                    <strong>4.9</strong>
-                    <span>рейтинг</span>
+                    <strong>3 года</strong>
+                    <span>гарантия</span>
                 </div>
 
             </div>
@@ -174,343 +202,403 @@
 
             <div class="hero-glow"></div>
 
-            <div class="hero-label">
-                BEST CHOICE
+            <div class="hero-grid-lines"></div>
+
+            <div class="pc-card">
+
+                <div class="pc-top">
+                    <span>NEXORA / X01</span>
+                    <span>RTX SERIES</span>
+                </div>
+
+                <div class="pc-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=1200&q=90"
+                        alt="Gaming PC"
+                    >
+                </div>
+
+                <div class="pc-bottom">
+
+                    <div>
+                        <small>GAMING SYSTEM</small>
+                        <strong>TITAN X</strong>
+                    </div>
+
+                    <div class="pc-price">
+                        18 990 000 сум
+                    </div>
+
+                </div>
+
             </div>
 
-            <img
-                src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=90"
-                alt="iPhone 15 Pro">
+            <div class="floating-spec spec-one">
+                <span>GPU</span>
+                <strong>RTX 5070</strong>
+            </div>
 
-            <div class="hero-product-info">
+            <div class="floating-spec spec-two">
+                <span>CPU</span>
+                <strong>RYZEN 7</strong>
+            </div>
 
-                <div>
+        </div>
 
-                    <span>
-                        PREMIUM
-                    </span>
+    </div>
 
-                    <h3>
-                        iPhone 15 Pro
-                    </h3>
+</section>
+
+
+<!-- ================= MARQUEE ================= -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>POWER</span>
+        <i>✦</i>
+        <span>PERFORMANCE</span>
+        <i>✦</i>
+        <span>PRECISION</span>
+        <i>✦</i>
+        <span>NEXORA</span>
+        <i>✦</i>
+        <span>GAMING</span>
+        <i>✦</i>
+
+        <span>POWER</span>
+        <i>✦</i>
+        <span>PERFORMANCE</span>
+        <i>✦</i>
+        <span>PRECISION</span>
+        <i>✦</i>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section" id="components">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <span class="eyebrow">EXPLORE TECHNOLOGY</span>
+
+                <h2>
+                    Всё для
+                    <span>мощной станции.</span>
+                </h2>
+            </div>
+
+            <p>
+                От готовых игровых систем до отдельных компонентов —
+                собери свою идеальную конфигурацию.
+            </p>
+
+        </div>
+
+
+        <div class="categories-grid" id="categoriesGrid"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BESTSELLERS ================= -->
+
+<section class="section products-section" id="catalog">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <span class="eyebrow">BESTSELLERS</span>
+
+                <h2>
+                    Выбор
+                    <span>геймеров.</span>
+                </h2>
+            </div>
+
+            <button class="text-btn" id="showAllBtn">
+                Смотреть каталог →
+            </button>
+
+        </div>
+
+
+        <div class="catalog-toolbar">
+
+            <div class="category-tabs" id="categoryTabs">
+
+                <button class="active" data-category="all">
+                    Все
+                </button>
+
+                <button data-category="pc">
+                    Gaming PC
+                </button>
+
+                <button data-category="laptop">
+                    Ноутбуки
+                </button>
+
+                <button data-category="gpu">
+                    Видеокарты
+                </button>
+
+                <button data-category="monitor">
+                    Мониторы
+                </button>
+
+                <button data-category="peripheral">
+                    Периферия
+                </button>
+
+            </div>
+
+            <select id="sortSelect">
+
+                <option value="popular">
+                    Популярные
+                </option>
+
+                <option value="new">
+                    Новинки
+                </option>
+
+                <option value="cheap">
+                    Сначала дешёвые
+                </option>
+
+                <option value="expensive">
+                    Сначала дорогие
+                </option>
+
+                <option value="discount">
+                    По скидке
+                </option>
+
+                <option value="rating">
+                    По рейтингу
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="products-grid" id="productsGrid"></div>
+
+        <div class="load-more-wrap">
+
+            <button class="btn btn-outline" id="loadMoreBtn">
+                Показать ещё
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BUILD PC ================= -->
+
+<section class="build-section" id="build">
+
+    <div class="container">
+
+        <div class="build-header">
+
+            <span class="eyebrow">NEXORA CONFIGURATOR</span>
+
+            <h2>
+                BUILD
+                <span>YOUR PC.</span>
+            </h2>
+
+            <p>
+                Создай конфигурацию под свои задачи.
+                Мы автоматически посчитаем стоимость и совместимость.
+            </p>
+
+        </div>
+
+
+        <div class="builder">
+
+            <div class="builder-options">
+
+                <div class="builder-row">
+
+                    <label>CPU</label>
+
+                    <select id="buildCpu">
+                        <option value="AMD Ryzen 5 7600|2500000">
+                            AMD Ryzen 5 7600 — 2 500 000 сум
+                        </option>
+
+                        <option value="AMD Ryzen 7 7800X3D|4800000">
+                            AMD Ryzen 7 7800X3D — 4 800 000 сум
+                        </option>
+
+                        <option value="Intel Core i7-14700K|5200000">
+                            Intel Core i7-14700K — 5 200 000 сум
+                        </option>
+                    </select>
 
                 </div>
 
 
-                <strong>
-                    $899
-                </strong>
+                <div class="builder-row">
+
+                    <label>GPU</label>
+
+                    <select id="buildGpu">
+
+                        <option value="RTX 4060|4200000">
+                            RTX 4060 — 4 200 000 сум
+                        </option>
+
+                        <option value="RTX 4070 Super|7200000">
+                            RTX 4070 Super — 7 200 000 сум
+                        </option>
+
+                        <option value="RTX 5070|10500000">
+                            RTX 5070 — 10 500 000 сум
+                        </option>
+
+                        <option value="RTX 5080|18000000">
+                            RTX 5080 — 18 000 000 сум
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="builder-row">
+
+                    <label>RAM</label>
+
+                    <select id="buildRam">
+
+                        <option value="16GB DDR5|1100000">
+                            16GB DDR5 — 1 100 000 сум
+                        </option>
+
+                        <option value="32GB DDR5|1900000">
+                            32GB DDR5 — 1 900 000 сум
+                        </option>
+
+                        <option value="64GB DDR5|3600000">
+                            64GB DDR5 — 3 600 000 сум
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="builder-row">
+
+                    <label>SSD</label>
+
+                    <select id="buildSsd">
+
+                        <option value="1TB NVMe|900000">
+                            1TB NVMe — 900 000 сум
+                        </option>
+
+                        <option value="2TB NVMe|1700000">
+                            2TB NVMe — 1 700 000 сум
+                        </option>
+
+                        <option value="4TB NVMe|3200000">
+                            4TB NVMe — 3 200 000 сум
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="builder-row">
+
+                    <label>Motherboard</label>
+
+                    <select id="buildBoard">
+
+                        <option value="B650 Gaming|1800000">
+                            B650 Gaming — 1 800 000 сум
+                        </option>
+
+                        <option value="X670 Gaming|3200000">
+                            X670 Gaming — 3 200 000 сум
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="builder-row">
+
+                    <label>PSU</label>
+
+                    <select id="buildPsu">
+
+                        <option value="750W Gold|1300000">
+                            750W Gold — 1 300 000 сум
+                        </option>
+
+                        <option value="850W Gold|1800000">
+                            850W Gold — 1 800 000 сум
+                        </option>
+
+                        <option value="1000W Gold|2600000">
+                            1000W Gold — 2 600 000 сум
+                        </option>
+
+                    </select>
+
+                </div>
 
             </div>
 
 
-            <button
-                class="hero-buy"
-                data-hero-product="1">
+            <div class="builder-summary">
 
-                Добавить в корзину
+                <span class="eyebrow">YOUR CONFIGURATION</span>
 
-            </button>
+                <div class="build-price" id="buildPrice">
+                    11 800 000 сум
+                </div>
 
-        </div>
+                <div class="build-power">
+                    Estimated power:
+                    <strong id="buildPower">550W</strong>
+                </div>
 
-    </div>
+                <div class="compatibility">
+                    <span></span>
+                    Все компоненты совместимы
+                </div>
 
-</section>
-
-
-<!-- =========================================
-     CATEGORIES
-========================================= -->
-
-<section class="categories-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    КАТЕГОРИИ
-                </span>
-
-                <h2>
-                    ВЫБЕРИ СВОЮ
-                    <span>ТЕХНИКУ</span>
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="categories">
-
-            <button
-                class="category-card active"
-                data-category="all">
-
-                <span class="category-icon">
-                    ◈
-                </span>
-
-                <strong>
-                    Всё
-                </strong>
-
-                <small>
-                    12 товаров
-                </small>
-
-            </button>
-
-
-            <button
-                class="category-card"
-                data-category="smartphones">
-
-                <span class="category-icon">
-                    ▣
-                </span>
-
-                <strong>
-                    Смартфоны
-                </strong>
-
-                <small>
-                    3 товара
-                </small>
-
-            </button>
-
-
-            <button
-                class="category-card"
-                data-category="laptops">
-
-                <span class="category-icon">
-                    ▱
-                </span>
-
-                <strong>
-                    Ноутбуки
-                </strong>
-
-                <small>
-                    2 товара
-                </small>
-
-            </button>
-
-
-            <button
-                class="category-card"
-                data-category="gaming">
-
-                <span class="category-icon">
-                    ◉
-                </span>
-
-                <strong>
-                    Gaming
-                </strong>
-
-                <small>
-                    3 товара
-                </small>
-
-            </button>
-
-
-            <button
-                class="category-card"
-                data-category="audio">
-
-                <span class="category-icon">
-                    ♫
-                </span>
-
-                <strong>
-                    Аудио
-                </strong>
-
-                <small>
-                    2 товара
-                </small>
-
-            </button>
-
-
-            <button
-                class="category-card"
-                data-category="monitors">
-
-                <span class="category-icon">
-                    ▤
-                </span>
-
-                <strong>
-                    Мониторы
-                </strong>
-
-                <small>
-                    2 товара
-                </small>
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CATALOG
-========================================= -->
-
-<section
-    class="catalog-section"
-    id="catalog">
-
-    <div class="container">
-
-        <div class="catalog-top">
-
-            <div>
-
-                <span class="section-label">
-                    CATALOG
-                </span>
-
-                <h2>
-                    ПОПУЛЯРНЫЕ
-                    <span>ТОВАРЫ</span>
-                </h2>
-
-            </div>
-
-
-            <div class="catalog-tools">
-
-                <button
-                    class="search-small"
-                    id="openSearch">
-
-                    🔎 Поиск
-
+                <button class="btn btn-primary" id="addBuildBtn">
+                    Добавить сборку в корзину →
                 </button>
 
-
-                <select id="sortProducts">
-
-                    <option value="default">
-                        Сначала популярные
-                    </option>
-
-                    <option value="cheap">
-                        Сначала дешёвые
-                    </option>
-
-                    <option value="expensive">
-                        Сначала дорогие
-                    </option>
-
-                </select>
-
             </div>
-
-        </div>
-
-
-        <div
-            class="products"
-            id="products">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     NEW
-========================================= -->
-
-<section
-    class="new-section"
-    id="new">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    NEW DROP
-                </span>
-
-                <h2>
-                    НОВЫЕ
-                    <span>ПОСТУПЛЕНИЯ</span>
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="products"
-            id="newProducts">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PROMO
-========================================= -->
-
-<section class="promo-section">
-
-    <div class="container">
-
-        <div class="promo">
-
-            <div>
-
-                <span>
-                    FIRST ORDER
-                </span>
-
-                <h2>
-                    -30% НА ПЕРВУЮ ПОКУПКУ
-                </h2>
-
-                <p>
-                    Используй промокод при оформлении заказа.
-                </p>
-
-            </div>
-
-
-            <button
-                id="copyPromo"
-                class="promo-code">
-
-                NEONIX30
-
-                <span>
-                    ⧉
-                </span>
-
-            </button>
 
         </div>
 
@@ -519,49 +607,175 @@
 </section>
 
 
-<!-- =========================================
-     ABOUT
-========================================= -->
+<!-- ================= GAMING ================= -->
 
-<section
-    class="about-section"
-    id="about">
+<section class="gaming-section" id="gaming">
+
+    <div class="container gaming-inner">
+
+        <div class="gaming-content">
+
+            <span class="eyebrow">NEXORA GAMING</span>
+
+            <h2>
+                ENTER
+                <span>THE GAME.</span>
+            </h2>
+
+            <p>
+                Производительность, которую чувствуешь.
+                Создано для тех, кто требует максимум.
+            </p>
+
+            <a href="#catalog" class="btn btn-primary">
+                Смотреть Gaming →
+            </a>
+
+        </div>
+
+        <div class="gaming-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1400&q=90"
+                alt="Gaming setup"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEALS ================= -->
+
+<section class="section" id="deals">
 
     <div class="container">
 
-        <div class="about-grid">
+        <div class="section-head">
 
             <div>
-
-                <span class="section-label">
-                    ABOUT NEONIX
-                </span>
+                <span class="eyebrow">LIMITED DEALS</span>
 
                 <h2>
-                    МАГАЗИН
-                    <span>ДЛЯ ТЕХ,</span>
-                    КТО ЛЮБИТ ТЕХНОЛОГИИ.
+                    Горячие
+                    <span>предложения.</span>
                 </h2>
-
             </div>
 
+            <div class="deal-timer">
 
-            <div class="about-text">
+                <span>До конца акции</span>
 
-                <p>
-                    Мы собираем современную электронику
-                    в одном месте — от смартфонов
-                    до мощных игровых систем.
-                </p>
-
-                <p>
-                    Только актуальные устройства,
-                    понятные цены и быстрая доставка.
-                </p>
+                <strong id="dealTimer">
+                    00:00:00
+                </strong>
 
             </div>
 
         </div>
+
+        <div class="products-grid" id="dealsGrid"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY NEXORA ================= -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <span class="eyebrow">WHY NEXORA</span>
+
+                <h2>
+                    Почему
+                    <span>мы.</span>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="benefits-grid">
+
+            <article>
+                <span>01</span>
+                <h3>Гарантия</h3>
+                <p>Официальная гарантия на технику и комплектующие.</p>
+            </article>
+
+            <article>
+                <span>02</span>
+                <h3>Оригинальная техника</h3>
+                <p>Только проверенные бренды и оригинальные устройства.</p>
+            </article>
+
+            <article>
+                <span>03</span>
+                <h3>Быстрая доставка</h3>
+                <p>Доставляем заказы максимально быстро.</p>
+            </article>
+
+            <article>
+                <span>04</span>
+                <h3>Поддержка 24/7</h3>
+                <p>Поможем подобрать оборудование под любые задачи.</p>
+            </article>
+
+            <article>
+                <span>05</span>
+                <h3>Сборка ПК</h3>
+                <p>Собираем мощные и совместимые системы.</p>
+            </article>
+
+            <article>
+                <span>06</span>
+                <h3>Безопасная оплата</h3>
+                <p>Безопасные способы оплаты и защита заказа.</p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="section reviews-section">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <span class="eyebrow">WHAT GAMERS SAY</span>
+
+                <h2>
+                    Отзывы
+                    <span>клиентов.</span>
+                </h2>
+            </div>
+
+            <div class="slider-buttons">
+
+                <button id="prevReview">←</button>
+                <button id="nextReview">→</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="reviews-slider" id="reviewsSlider"></div>
 
     </div>
 
@@ -570,180 +784,217 @@
 </main>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
-    <div class="container footer-grid">
+    <div class="container">
 
-        <div>
+        <div class="footer-top">
 
-            <a href="#" class="logo">
-                <span class="logo-mark">N</span>
-                <span>NEONIX</span>
-            </a>
+            <div class="footer-brand">
 
-            <p>
-                Электроника нового поколения.
-            </p>
+                <a href="#home" class="logo">
+                    <span>NEXORA</span>
+                    <small>TECH / GAMING</small>
+                </a>
 
-        </div>
+                <p>
+                    Технологии нового поколения
+                    для тех, кто требует большего.
+                </p>
 
-
-        <div>
-
-            <h4>
-                Магазин
-            </h4>
-
-            <a href="#catalog">
-                Каталог
-            </a>
-
-            <a href="#new">
-                Новинки
-            </a>
-
-            <a href="#about">
-                О нас
-            </a>
-
-        </div>
+            </div>
 
 
-        <div>
+            <div class="footer-column">
 
-            <h4>
-                Помощь
-            </h4>
+                <h4>Каталог</h4>
 
-            <a href="#">
-                Доставка
-            </a>
+                <a href="#catalog">Gaming PC</a>
+                <a href="#laptops">Ноутбуки</a>
+                <a href="#components">Комплектующие</a>
+                <a href="#catalog">Мониторы</a>
+                <a href="#catalog">Периферия</a>
 
-            <a href="#">
-                Оплата
-            </a>
-
-            <a href="#">
-                Гарантия
-            </a>
-
-        </div>
+            </div>
 
 
-        <div>
+            <div class="footer-column">
 
-            <h4>
-                Контакты
-            </h4>
+                <h4>Компания</h4>
 
-            <a href="#">
-                Telegram
-            </a>
+                <a href="#">О нас</a>
+                <a href="#">Доставка</a>
+                <a href="#">Гарантия</a>
+                <a href="#">Контакты</a>
 
-            <a href="#">
-                Instagram
-            </a>
+            </div>
 
-            <a href="#">
-                Поддержка
-            </a>
+
+            <div class="footer-column">
+
+                <h4>Поддержка</h4>
+
+                <a href="#">FAQ</a>
+                <a href="#">Возврат</a>
+                <a href="#">Сервис</a>
+                <a href="#">Помощь</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Social</h4>
+
+                <a href="#">Telegram ↗</a>
+                <a href="#">Instagram ↗</a>
+                <a href="#">YouTube ↗</a>
+                <a href="#">TikTok ↗</a>
+
+            </div>
 
         </div>
 
-    </div>
 
+        <div class="footer-bottom">
 
-    <div class="container footer-bottom">
+            <span>© 2026 NEXORA TECH</span>
 
-        <span>
-            © 2026 NEONIX
-        </span>
+            <span>
+                PREMIUM TECHNOLOGY / GAMING
+            </span>
 
-        <span>
-            ALL SYSTEMS ONLINE ●
-        </span>
+        </div>
 
     </div>
 
 </footer>
 
 
-<!-- =========================================
-     OVERLAY
-========================================= -->
+<!-- ================= PRODUCT MODAL ================= -->
 
-<div
-    class="overlay"
-    id="overlay">
-</div>
+<div class="product-modal" id="productModal">
 
+    <div class="product-modal-inner">
 
-<!-- =========================================
-     CART
-========================================= -->
+        <button class="close-btn" id="closeProduct">
+            ×
+        </button>
 
-<aside
-    class="cart-drawer"
-    id="cartDrawer">
+        <div class="product-modal-image">
 
-    <div class="drawer-header">
-
-        <div>
-
-            <span>
-                NEONIX
-            </span>
-
-            <h2>
-                Корзина
-            </h2>
+            <img id="modalProductImage" src="" alt="">
 
         </div>
 
+        <div class="product-modal-content">
 
-        <button
-            id="closeCart"
-            class="close-btn">
+            <span class="eyebrow" id="modalBrand">
+                BRAND
+            </span>
 
+            <h2 id="modalName">
+                Product
+            </h2>
+
+            <div class="modal-rating" id="modalRating"></div>
+
+            <p id="modalDescription"></p>
+
+            <div class="modal-price" id="modalPrice"></div>
+
+            <div class="modal-old-price" id="modalOldPrice"></div>
+
+            <div class="modal-stock">
+                <span></span>
+                В наличии
+            </div>
+
+            <div class="modal-specs" id="modalSpecs"></div>
+
+            <div class="quantity-control">
+
+                <button id="modalMinus">−</button>
+
+                <strong id="modalQuantity">1</strong>
+
+                <button id="modalPlus">+</button>
+
+            </div>
+
+            <button class="btn btn-primary modal-add" id="modalAdd">
+                Добавить в корзину →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart">
+
+    <div class="cart-header">
+
+        <div>
+            <span class="eyebrow">YOUR CART</span>
+            <h3>Корзина</h3>
+        </div>
+
+        <button class="close-btn" id="closeCart">
             ×
-
         </button>
 
     </div>
 
 
-    <div
-        class="cart-items"
-        id="cartItems">
+    <div class="cart-items" id="cartItems"></div>
+
+
+    <div class="cart-empty" id="cartEmpty">
+
+        <div class="empty-icon">◫</div>
+
+        <h3>Корзина пуста</h3>
+
+        <p>
+            Добавь технику, которая нужна
+            для твоего следующего уровня.
+        </p>
+
+        <button class="btn btn-primary" id="continueShopping">
+            Смотреть товары
+        </button>
+
     </div>
 
 
-    <div class="cart-footer">
+    <div class="cart-footer" id="cartFooter">
 
-        <div class="cart-total">
-
-            <span>
-                Итого
-            </span>
-
-            <strong id="cartTotal">
-                $0
-            </strong>
-
+        <div class="cart-line">
+            <span>Товары</span>
+            <strong id="cartSubtotal">0 сум</strong>
         </div>
 
+        <div class="cart-line">
+            <span>Доставка</span>
+            <strong>Бесплатно</strong>
+        </div>
 
-        <button
-            class="checkout-btn"
-            id="checkoutButton">
+        <div class="cart-total">
+            <span>Итого</span>
+            <strong id="cartTotal">0 сум</strong>
+        </div>
 
-            Оформить заказ
-            <span>→</span>
-
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+            Оформить заказ →
         </button>
 
     </div>
@@ -751,485 +1002,13 @@
 </aside>
 
 
-<!-- =========================================
-     PRODUCT MODAL
-========================================= -->
-
-<div
-    class="modal"
-    id="productModal">
-
-    <div class="product-modal">
-
-        <button
-            class="modal-close"
-            data-close="productModal">
-
-            ×
-
-        </button>
-
-
-        <div
-            class="modal-image"
-            id="modalImage">
-
-            <img
-                src=""
-                alt="Товар">
-
-        </div>
-
-
-        <div class="modal-info">
-
-            <span
-                class="modal-category"
-                id="modalCategory">
-                СМАРТФОН
-            </span>
-
-
-            <h2 id="modalName">
-                Товар
-            </h2>
-
-
-            <div class="modal-rating">
-
-                ★★★★★
-
-                <span id="modalReviews">
-                    4.9 / 5
-                </span>
-
-            </div>
-
-
-            <p
-                class="modal-description"
-                id="modalDescription">
-            </p>
-
-
-            <div class="product-stock">
-
-                <span class="stock-dot"></span>
-
-                В наличии
-
-                <b id="modalStock">
-                    10 шт.
-                </b>
-
-            </div>
-
-
-            <div class="product-options">
-
-                <div class="option-group">
-
-                    <span>
-                        ЦВЕТ
-                    </span>
-
-                    <div class="color-options">
-
-                        <button
-                            class="color-option black active"
-                            data-color="Black"
-                            title="Чёрный">
-                        </button>
-
-                        <button
-                            class="color-option silver"
-                            data-color="Silver"
-                            title="Серебристый">
-                        </button>
-
-                        <button
-                            class="color-option blue"
-                            data-color="Blue"
-                            title="Синий">
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="option-group">
-
-                    <span>
-                        ПАМЯТЬ
-                    </span>
-
-                    <div class="memory-options">
-
-                        <button
-                            class="memory-option active"
-                            data-memory="128">
-                            128 GB
-                        </button>
-
-                        <button
-                            class="memory-option"
-                            data-memory="256">
-                            256 GB
-                        </button>
-
-                        <button
-                            class="memory-option"
-                            data-memory="512">
-                            512 GB
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-specs">
-
-                <div>
-
-                    <span>
-                        Экран
-                    </span>
-
-                    <strong id="specScreen">
-                        —
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Процессор
-                    </span>
-
-                    <strong id="specCpu">
-                        —
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Камера
-                    </span>
-
-                    <strong id="specCamera">
-                        —
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Гарантия
-                    </span>
-
-                    <strong>
-                        12 месяцев
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-buy">
-
-                <div class="modal-price-block">
-
-                    <strong id="modalPrice">
-                        $0
-                    </strong>
-
-                    <del id="modalOldPrice">
-                        $0
-                    </del>
-
-                </div>
-
-
-                <div class="quantity-control">
-
-                    <button id="modalMinus">
-                        −
-                    </button>
-
-                    <span id="modalQuantity">
-                        1
-                    </span>
-
-                    <button id="modalPlus">
-                        +
-                    </button>
-
-                </div>
-
-
-                <button
-                    id="modalAdd"
-                    class="modal-add-button">
-
-                    В корзину
-
-                    <span>
-                        →
-                    </span>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p>Товар добавлен в корзину</p>
 </div>
 
-
-<!-- =========================================
-     SEARCH MODAL
-========================================= -->
-
-<div
-    class="modal"
-    id="searchPanel">
-
-    <div class="search-modal">
-
-        <button
-            class="modal-close"
-            id="closeSearch">
-
-            ×
-
-        </button>
-
-
-        <span class="section-label">
-            SEARCH
-        </span>
-
-        <h2>
-            НАЙТИ <span>ТОВАР</span>
-        </h2>
-
-
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Например: iPhone, MacBook, Gaming...">
-
-
-        <div class="search-hint">
-            Начни вводить название товара.
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================
-     FAVORITES MODAL
-========================================= -->
-
-<div
-    class="modal"
-    id="favoritesModal">
-
-    <div class="simple-modal">
-
-        <button
-            class="modal-close"
-            data-close="favoritesModal">
-
-            ×
-
-        </button>
-
-
-        <span class="section-label">
-            SAVED
-        </span>
-
-        <h2>
-            ИЗБРАННЫЕ
-            <span>ТОВАРЫ</span>
-        </h2>
-
-
-        <div
-            id="favoritesList"
-            class="favorites-list">
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================
-     CHECKOUT MODAL
-========================================= -->
-
-<div
-    class="modal"
-    id="checkoutModal">
-
-    <div class="simple-modal">
-
-        <button
-            class="modal-close"
-            data-close="checkoutModal">
-
-            ×
-
-        </button>
-
-
-        <span class="section-label">
-            CHECKOUT
-        </span>
-
-        <h2>
-            ОФОРМИТЬ
-            <span>ЗАКАЗ</span>
-        </h2>
-
-
-        <form id="checkoutForm">
-
-            <label>
-                Имя
-
-                <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Ваше имя">
-
-            </label>
-
-
-            <label>
-                Телефон
-
-                <input
-                    type="tel"
-                    name="phone"
-                    required
-                    placeholder="+998 __ ___ __ __">
-
-            </label>
-
-
-            <label>
-                Адрес доставки
-
-                <input
-                    type="text"
-                    name="address"
-                    required
-                    placeholder="Адрес">
-
-            </label>
-
-
-            <div class="checkout-total">
-
-                <span>
-                    К оплате
-                </span>
-
-                <strong id="checkoutTotal">
-                    $0
-                </strong>
-
-            </div>
-
-
-            <button
-                class="checkout-btn"
-                type="submit">
-
-                Подтвердить заказ
-                <span>→</span>
-
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================
-     ORDER MODAL
-========================================= -->
-
-<div
-    class="modal"
-    id="orderModal">
-
-    <div class="simple-modal">
-
-        <button
-            class="modal-close"
-            data-close="orderModal">
-
-            ×
-
-        </button>
-
-
-        <span class="section-label">
-            TRACKING
-        </span>
-
-        <h2>
-            СТАТУС
-            <span>ЗАКАЗА</span>
-        </h2>
-
-
-        <div id="orderStatus">
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================
-     TOAST
-========================================= -->
-
-<div
-    class="toast"
-    id="toast">
-</div>
-
-<button
-    class="back-top"
-    id="backTop"
-    title="Наверх">
-    ↑
-</button>
 
 <script src="script.js"></script>
 

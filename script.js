@@ -1,633 +1,562 @@
-// ==========================================
-// NEONIX — STORE ENGINE
-// ==========================================
+/* =========================================================
+   NEXORA STORE
+   Vanilla JavaScript
+========================================================= */
+
+
+/* ================= DATA ================= */
 
 const products = [
 
     {
         id: 1,
-        name: "iPhone 15 Pro",
-        category: "smartphones",
-        categoryName: "Смартфоны",
-        price: 899,
-        oldPrice: 999,
-        badge: "PRO",
-        rating: 4.9,
-        reviews: 245,
-        stock: 12,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1696446701796-da61225697cc?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Флагманский смартфон с титановым корпусом, мощным процессором и профессиональной камерой.",
-
-        specs: {
-            screen: '6.1" OLED',
-            cpu: "A17 Pro",
-            camera: "48 MP"
-        },
-
-        memories: {
-            128: 899,
-            256: 999,
-            512: 1199
+        name: "NEXORA TITAN X",
+        brand: "NEXORA",
+        category: "pc",
+        price: 18990000,
+        oldPrice: 21490000,
+        discount: 12,
+        rating: 5,
+        reviews: 128,
+        popular: 100,
+        isNew: true,
+        image: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=1000&q=90",
+        specs: ["RTX 5070", "Ryzen 7", "32GB", "1TB NVMe"],
+        description: "Премиальная игровая система NEXORA TITAN X для игр, стриминга и профессиональных задач.",
+        details: {
+            CPU: "AMD Ryzen 7 7800X3D",
+            GPU: "NVIDIA RTX 5070",
+            RAM: "32GB DDR5",
+            SSD: "1TB NVMe",
+            PSU: "850W Gold",
+            Cooling: "Liquid Cooling"
         }
     },
-
 
     {
         id: 2,
-        name: "Galaxy S24 Ultra",
-        category: "smartphones",
-        categoryName: "Смартфоны",
-        price: 999,
-        oldPrice: 1099,
-        badge: "TOP",
-        rating: 4.8,
-        reviews: 189,
-        stock: 8,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1707234222208-87c5d2c67d3d?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1707234222208-87c5d2c67d3d?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Премиальный смартфон с огромным AMOLED-дисплеем и продвинутой камерой.",
-
-        specs: {
-            screen: '6.8" AMOLED',
-            cpu: "Snapdragon 8 Gen 3",
-            camera: "200 MP"
-        },
-
-        memories: {
-            256: 999,
-            512: 1099,
-            1024: 1299
+        name: "NEXORA VOID PRO",
+        brand: "NEXORA",
+        category: "pc",
+        price: 24990000,
+        oldPrice: 27990000,
+        discount: 11,
+        rating: 5,
+        reviews: 96,
+        popular: 98,
+        isNew: true,
+        image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1000&q=90",
+        specs: ["RTX 5080", "i7", "64GB", "2TB NVMe"],
+        description: "Экстремальная производительность для 4K gaming и профессионального контента.",
+        details: {
+            CPU: "Intel Core i7-14700K",
+            GPU: "NVIDIA RTX 5080",
+            RAM: "64GB DDR5",
+            SSD: "2TB NVMe",
+            PSU: "1000W Gold",
+            Cooling: "360mm Liquid"
         }
     },
-
 
     {
         id: 3,
-        name: "Gaming Phone X",
-        category: "smartphones",
-        categoryName: "Смартфоны",
-        price: 699,
-        oldPrice: 799,
-        badge: "GAMING",
-        rating: 4.9,
-        reviews: 128,
-        stock: 15,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Игровой смартфон с высокой производительностью и быстрым экраном.",
-
-        specs: {
-            screen: '6.7" AMOLED',
-            cpu: "Snapdragon 8",
-            camera: "50 MP"
-        },
-
-        memories: {
-            128: 699,
-            256: 799,
-            512: 899
+        name: "ASUS ROG STRIX G16",
+        brand: "ASUS",
+        category: "laptop",
+        price: 15990000,
+        oldPrice: 17990000,
+        discount: 11,
+        rating: 5,
+        reviews: 84,
+        popular: 94,
+        isNew: true,
+        image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=90",
+        specs: ["RTX 4070", "i9", "32GB", "1TB"],
+        description: "Мощный игровой ноутбук с высокой частотой обновления дисплея.",
+        details: {
+            CPU: "Intel Core i9",
+            GPU: "RTX 4070",
+            RAM: "32GB",
+            SSD: "1TB NVMe",
+            Display: "16 inch QHD",
+            Refresh: "240Hz"
         }
     },
-
 
     {
         id: 4,
-        name: "MacBook Pro M3",
-        category: "laptops",
-        categoryName: "Ноутбуки",
-        price: 1499,
-        oldPrice: 1699,
-        badge: "PRO",
-        rating: 5.0,
-        reviews: 94,
-        stock: 7,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Мощный ноутбук для программирования, монтажа, работы и творчества.",
-
-        specs: {
-            screen: '14" Liquid Retina',
-            cpu: "Apple M3",
-            camera: "1080p"
+        name: "LENOVO LEGION 7",
+        brand: "LENOVO",
+        category: "laptop",
+        price: 13990000,
+        oldPrice: 15490000,
+        discount: 10,
+        rating: 4.9,
+        reviews: 71,
+        popular: 91,
+        isNew: false,
+        image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1000&q=90",
+        specs: ["RTX 4060", "Ryzen 7", "16GB", "1TB"],
+        description: "Сбалансированный игровой ноутбук Legion для игр и работы.",
+        details: {
+            CPU: "Ryzen 7",
+            GPU: "RTX 4060",
+            RAM: "16GB",
+            SSD: "1TB",
+            Display: "16 inch",
+            Refresh: "165Hz"
         }
     },
-
 
     {
         id: 5,
-        name: "ROG Gaming Laptop",
-        category: "laptops",
-        categoryName: "Ноутбуки",
-        price: 1399,
-        oldPrice: 1599,
-        badge: "GAMING",
-        rating: 4.8,
-        reviews: 76,
-        stock: 5,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Производительный игровой ноутбук для современных игр.",
-
-        specs: {
-            screen: '15.6" 240Hz',
-            cpu: "Intel Core i9",
-            camera: "1080p"
+        name: "MSI RTX 5070 GAMING",
+        brand: "MSI",
+        category: "gpu",
+        price: 10500000,
+        oldPrice: 11900000,
+        discount: 12,
+        rating: 4.9,
+        reviews: 66,
+        popular: 93,
+        isNew: true,
+        image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1000&q=90",
+        specs: ["RTX 5070", "12GB", "GDDR7", "DLSS"],
+        description: "Современная видеокарта для высоких настроек графики и 4K gaming.",
+        details: {
+            GPU: "RTX 5070",
+            Memory: "12GB GDDR7",
+            Interface: "PCIe 5.0",
+            RayTracing: "Yes"
         }
     },
 
-
     {
         id: 6,
-        name: "RTX Gaming PC",
-        category: "gaming",
-        categoryName: "Gaming",
-        price: 1799,
-        oldPrice: 1999,
-        badge: "ULTRA",
-        rating: 4.9,
-        reviews: 51,
-        stock: 4,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Мощный игровой компьютер для современных AAA-игр."
+        name: "ASUS ROG RTX 4080",
+        brand: "ASUS",
+        category: "gpu",
+        price: 15990000,
+        oldPrice: 17490000,
+        discount: 9,
+        rating: 4.8,
+        reviews: 54,
+        popular: 88,
+        isNew: false,
+        image: "https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=1000&q=90",
+        specs: ["RTX 4080", "16GB", "GDDR6X", "DLSS"],
+        description: "Мощная видеокарта для требовательного gaming и создания контента.",
+        details: {
+            GPU: "RTX 4080",
+            Memory: "16GB GDDR6X",
+            Interface: "PCIe 4.0",
+            Cooling: "Triple Fan"
+        }
     },
-
 
     {
         id: 7,
-        name: "Mechanical RGB Keyboard",
-        category: "gaming",
-        categoryName: "Gaming",
-        price: 119,
-        oldPrice: 149,
-        badge: "RGB",
-        rating: 4.8,
-        reviews: 312,
-        stock: 22,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Механическая клавиатура с RGB-подсветкой."
+        name: "NEXORA ULTRAWIDE 34",
+        brand: "NEXORA",
+        category: "monitor",
+        price: 6490000,
+        oldPrice: 7490000,
+        discount: 13,
+        rating: 4.9,
+        reviews: 112,
+        popular: 97,
+        isNew: true,
+        image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1000&q=90",
+        specs: ["34\"", "UWQHD", "165Hz", "1ms"],
+        description: "Премиальный ультраширокий игровой монитор с высокой частотой обновления.",
+        details: {
+            Display: "34 inch",
+            Resolution: "3440×1440",
+            Refresh: "165Hz",
+            Response: "1ms",
+            Panel: "IPS"
+        }
     },
-
 
     {
         id: 8,
-        name: "Gaming Mouse Pro",
-        category: "gaming",
-        categoryName: "Gaming",
-        price: 79,
-        oldPrice: 99,
-        badge: "FAST",
-        rating: 4.7,
-        reviews: 421,
-        stock: 31,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1563297007-0686b7003af7?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Лёгкая игровая мышь с точным сенсором."
+        name: "SAMSUNG ODYSSEY G7",
+        brand: "SAMSUNG",
+        category: "monitor",
+        price: 7990000,
+        oldPrice: 8990000,
+        discount: 11,
+        rating: 4.9,
+        reviews: 143,
+        popular: 96,
+        isNew: false,
+        image: "https://images.unsplash.com/photo-1616763355548-1b606f439f86?auto=format&fit=crop&w=1000&q=90",
+        specs: ["32\"", "4K", "240Hz", "1ms"],
+        description: "Флагманский игровой монитор для максимальной плавности.",
+        details: {
+            Display: "32 inch",
+            Resolution: "4K",
+            Refresh: "240Hz",
+            Response: "1ms",
+            HDR: "HDR600"
+        }
     },
-
 
     {
         id: 9,
-        name: "HyperX Headset",
-        category: "audio",
-        categoryName: "Аудио",
-        price: 129,
-        oldPrice: 159,
-        badge: "5.1",
-        rating: 4.9,
-        reviews: 278,
-        stock: 18,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Игровая гарнитура с объёмным звуком."
+        name: "RAZER BLACKWIDOW V4",
+        brand: "RAZER",
+        category: "peripheral",
+        price: 1890000,
+        oldPrice: 2190000,
+        discount: 14,
+        rating: 4.8,
+        reviews: 201,
+        popular: 89,
+        isNew: false,
+        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=90",
+        specs: ["Mechanical", "RGB", "USB", "Gaming"],
+        description: "Механическая игровая клавиатура с быстрыми переключателями.",
+        details: {
+            Type: "Mechanical",
+            Switches: "Green",
+            Lighting: "RGB",
+            Connection: "USB"
+        }
     },
-
 
     {
         id: 10,
-        name: "Sony WH-1000XM5",
-        category: "audio",
-        categoryName: "Аудио",
-        price: 329,
-        oldPrice: 379,
-        badge: "PRO",
+        name: "LOGITECH G PRO X",
+        brand: "LOGITECH",
+        category: "peripheral",
+        price: 1190000,
+        oldPrice: 1390000,
+        discount: 14,
         rating: 4.9,
-        reviews: 342,
-        stock: 11,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Премиальные беспроводные наушники с шумоподавлением."
+        reviews: 324,
+        popular: 95,
+        isNew: true,
+        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1000&q=90",
+        specs: ["Wireless", "25K DPI", "RGB", "Pro"],
+        description: "Профессиональная беспроводная игровая мышь.",
+        details: {
+            Sensor: "HERO 25K",
+            DPI: "25,600",
+            Connection: "Wireless",
+            Battery: "70h"
+        }
     },
-
 
     {
         id: 11,
-        name: "Alienware 240Hz",
-        category: "monitors",
-        categoryName: "Мониторы",
-        price: 449,
-        oldPrice: 499,
-        badge: "240HZ",
-        rating: 4.9,
+        name: "CORSAIR VENGEANCE 32GB",
+        brand: "CORSAIR",
+        category: "ram",
+        price: 1900000,
+        oldPrice: 2200000,
+        discount: 14,
+        rating: 4.8,
         reviews: 83,
-        stock: 6,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1616763355548-1b606f439f86?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Игровой монитор с частотой обновления 240 Гц."
+        popular: 82,
+        isNew: false,
+        image: "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=1000&q=90",
+        specs: ["32GB", "DDR5", "6000MHz", "RGB"],
+        description: "Быстрая DDR5 память для современных игровых систем.",
+        details: {
+            Capacity: "32GB",
+            Type: "DDR5",
+            Speed: "6000MHz",
+            Lighting: "RGB"
+        }
     },
-
 
     {
         id: 12,
-        name: "UltraWide Gaming",
-        category: "monitors",
-        categoryName: "Мониторы",
-        price: 599,
-        oldPrice: 699,
-        badge: "ULTRA",
-        rating: 4.8,
-        reviews: 61,
-        stock: 9,
-
-        images: {
-            Black:
-                "https://images.unsplash.com/photo-1616763355548-1b606f439f86?auto=format&fit=crop&w=1000&q=90",
-
-            Silver:
-                "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1000&q=90",
-
-            Blue:
-                "https://images.unsplash.com/photo-1616763355548-1b606f439f86?auto=format&fit=crop&w=1000&q=90"
-        },
-
-        description:
-            "Большой ультраширокий монитор для игр и работы."
+        name: "SAMSUNG 990 PRO 2TB",
+        brand: "SAMSUNG",
+        category: "ssd",
+        price: 1700000,
+        oldPrice: 2050000,
+        discount: 17,
+        rating: 4.9,
+        reviews: 188,
+        popular: 90,
+        isNew: false,
+        image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=1000&q=90",
+        specs: ["2TB", "NVMe", "PCIe 4.0", "7450MB/s"],
+        description: "Высокопроизводительный NVMe SSD для gaming и работы.",
+        details: {
+            Capacity: "2TB",
+            Interface: "PCIe 4.0",
+            Read: "7450MB/s",
+            Form: "M.2"
+        }
     }
 
 ];
 
 
-// ==========================================
-// STATE
-// ==========================================
+/* ================= CATEGORIES ================= */
 
-let cart =
-    JSON.parse(
-        localStorage.getItem(
-            "neonix_cart"
-        ) || "[]"
-    );
+const categories = [
 
-let favorites =
-    JSON.parse(
-        localStorage.getItem(
-            "neonix_favorites"
-        ) || "[]"
-    );
+    ["01", "Gaming PC", "Мощные готовые системы", "▣", "pc"],
+    ["02", "Gaming Laptop", "Производительность везде", "▱", "laptop"],
+    ["03", "Мониторы", "Высокая частота", "▤", "monitor"],
+    ["04", "Видеокарты", "Максимум FPS", "◈", "gpu"],
+    ["05", "Процессоры", "Чистая мощность", "◉", "cpu"],
+    ["06", "RAM", "Быстрая память", "▥", "ram"],
+    ["07", "SSD", "Скорость загрузки", "▰", "ssd"],
+    ["08", "Клавиатуры", "Точный контроль", "⌨", "peripheral"],
+    ["09", "Мыши", "Точность движения", "◉", "peripheral"],
+    ["10", "Гарнитуры", "Погружение", "◖", "peripheral"]
+
+];
+
+
+/* ================= REVIEWS ================= */
+
+const reviews = [
+
+    {
+        name: "Александр",
+        product: "NEXORA TITAN X",
+        text: "Сборка просто зверь. Все игры идут на максимальных настройках. Отдельно понравилось качество самой сборки.",
+        avatar: "А"
+    },
+
+    {
+        name: "Дмитрий",
+        product: "ASUS ROG STRIX G16",
+        text: "Очень мощный ноутбук. Экран отличный, охлаждение работает хорошо. NEXORA помогли подобрать конфигурацию.",
+        avatar: "Д"
+    },
+
+    {
+        name: "Максим",
+        product: "RTX 5070 GAMING",
+        text: "Заказал видеокарту. Доставка быстрая, упаковка отличная. Карта работает идеально.",
+        avatar: "М"
+    },
+
+    {
+        name: "Илья",
+        product: "SAMSUNG ODYSSEY",
+        text: "Монитор полностью изменил мой gaming setup. 240Hz реально ощущаются.",
+        avatar: "И"
+    },
+
+    {
+        name: "Роман",
+        product: "LOGITECH G PRO X",
+        text: "Отличная мышь. Очень лёгкая и точная. Для соревновательных игр самое то.",
+        avatar: "Р"
+    },
+
+    {
+        name: "Егор",
+        product: "NEXORA VOID PRO",
+        text: "Брал готовую сборку. Производительность невероятная. Сервис тоже на уровне.",
+        avatar: "Е"
+    }
+
+];
+
+
+/* ================= STATE ================= */
+
+let cart = JSON.parse(localStorage.getItem("nexoraCart")) || [];
+
+let currentProducts = [...products];
+
+let visibleProducts = 8;
 
 let currentCategory = "all";
 
-let selectedProduct = null;
-
-let selectedMemory = null;
-
-let selectedColor = "Black";
+let modalProduct = null;
 
 let modalQuantity = 1;
 
-
-// ==========================================
-// HELPERS
-// ==========================================
-
-function productById(id) {
-
-    return products.find(
-        product =>
-            product.id === Number(id)
-    );
-}
+let reviewIndex = 0;
 
 
-function money(value) {
+/* ================= DOM ================= */
 
-    return "$" +
-        Number(value)
-            .toLocaleString(
-                "en-US"
-            );
+const productsGrid = document.getElementById("productsGrid");
+const dealsGrid = document.getElementById("dealsGrid");
+const categoriesGrid = document.getElementById("categoriesGrid");
 
-}
+const cartElement = document.querySelector(".cart");
+const cartOverlay = document.getElementById("cartOverlay");
+const cartItems = document.getElementById("cartItems");
+
+const cartEmpty = document.getElementById("cartEmpty");
+const cartFooter = document.getElementById("cartFooter");
+
+const cartCount = document.getElementById("cartCount");
+const cartSubtotal = document.getElementById("cartSubtotal");
+const cartTotal = document.getElementById("cartTotal");
+
+const toast = document.getElementById("toast");
+
+const productModal = document.getElementById("productModal");
+
+const searchOverlay = document.getElementById("searchOverlay");
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
 
 
-function saveData() {
+/* ================= FORMAT ================= */
 
-    localStorage.setItem(
-        "neonix_cart",
-        JSON.stringify(cart)
-    );
+function formatPrice(value) {
 
-    localStorage.setItem(
-        "neonix_favorites",
-        JSON.stringify(favorites)
-    );
-
-}
-
-
-function showToast(text) {
-
-    const toast =
-        document.getElementById(
-            "toast"
-        );
-
-    if (!toast) return;
-
-    toast.textContent = text;
-
-    toast.classList.add(
-        "active"
-    );
-
-    clearTimeout(
-        window.toastTimer
-    );
-
-    window.toastTimer =
-        setTimeout(() => {
-
-            toast.classList.remove(
-                "active"
-            );
-
-        }, 2300);
+    return new Intl.NumberFormat("ru-RU").format(value) + " сум";
 
 }
 
 
-// ==========================================
-// COUNTERS
-// ==========================================
+/* ================= CATEGORIES ================= */
 
-function updateCounters() {
+function renderCategories() {
 
-    const cartCount =
-        document.getElementById(
-            "cartCount"
-        );
+    categoriesGrid.innerHTML = categories.map(category => {
 
-    const favoritesCount =
-        document.getElementById(
-            "favoritesCount"
-        );
+        const [number, name, description, icon, type] = category;
 
+        return `
 
-    const count =
-        cart.reduce(
-            (sum, item) =>
-                sum + item.quantity,
-            0
-        );
+            <article
+                class="category-card"
+                data-category="${type}"
+            >
 
+                <div>
 
-    if (cartCount) {
+                    <span class="category-number">
+                        ${number}
+                    </span>
 
-        cartCount.textContent =
-            count;
+                    <div class="category-icon">
+                        ${icon}
+                    </div>
 
-    }
+                </div>
 
+                <div>
 
-    if (favoritesCount) {
+                    <h3>${name}</h3>
 
-        favoritesCount.textContent =
-            favorites.length;
+                    <p>${description}</p>
 
-    }
+                </div>
+
+                <span class="category-arrow">
+                    ↗
+                </span>
+
+            </article>
+
+        `;
+
+    }).join("");
 
 }
 
 
-// ==========================================
-// PRODUCT CARD
-// ==========================================
+/* ================= PRODUCT CARD ================= */
 
-function productCard(product) {
+function createProductCard(product) {
 
-    const liked =
-        favorites.includes(
-            product.id
-        );
+    const oldPrice = product.oldPrice
+        ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>`
+        : "";
 
+    const discount = product.discount
+        ? `<span class="discount">-${product.discount}%</span>`
+        : "";
 
     return `
 
-        <article
-            class="product-card"
-            data-product-id="${product.id}">
+        <article class="product-card">
 
             <div class="product-image">
 
-                <span class="product-badge">
-                    ${product.badge}
-                </span>
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                >
+
+                ${discount}
 
                 <button
-                    class="favorite-product ${
-                        liked
-                            ? "active"
-                            : ""
-                    }"
-                    data-favorite="${product.id}">
-
-                    ${
-                        liked
-                            ? "♥"
-                            : "♡"
-                    }
-
+                    class="product-favorite"
+                    data-favorite="${product.id}"
+                    aria-label="Добавить в избранное"
+                >
+                    ♡
                 </button>
-
-                <img
-                    src="${product.images.Black}"
-                    alt="${product.name}"
-                    loading="lazy">
 
             </div>
 
 
             <div class="product-info">
 
-                <span class="product-category">
-                    ${product.categoryName}
+                <span class="product-brand">
+                    ${product.brand}
                 </span>
 
-                <h3>
+                <h3 class="product-name">
                     ${product.name}
                 </h3>
 
-                <div class="product-rating">
-
+                <div class="rating">
                     ★ ${product.rating}
-
-                    <small>
+                    <span style="color:#686d65">
                         (${product.reviews})
-                    </small>
+                    </span>
+                </div>
+
+                <div class="product-specs">
+
+                    ${product.specs.map(spec =>
+                        `<span>${spec}</span>`
+                    ).join("")}
 
                 </div>
 
-                <p class="product-description">
-                    ${product.description}
-                </p>
 
-                <div class="product-bottom">
+                <div class="price-row">
 
                     <div>
 
-                        <span class="product-price">
-                            ${money(product.price)}
-                        </span>
+                        <strong class="price">
+                            ${formatPrice(product.price)}
+                        </strong>
 
-                        <del>
-                            ${money(product.oldPrice)}
-                        </del>
+                        ${oldPrice}
 
                     </div>
 
-
                     <button
-                        class="product-add"
-                        data-add="${product.id}">
-
+                        class="add-product"
+                        data-add="${product.id}"
+                        title="Добавить в корзину"
+                    >
                         +
-
                     </button>
 
                 </div>
+
+
+                <button
+                    class="product-details"
+                    data-details="${product.id}"
+                >
+                    Подробнее →
+                </button>
 
             </div>
 
@@ -638,1801 +567,518 @@ function productCard(product) {
 }
 
 
-// ==========================================
-// RENDER PRODUCTS
-// ==========================================
+/* ================= PRODUCTS ================= */
 
-function renderProducts(
-    customList = null
-) {
+function renderProducts() {
 
-    const container =
-        document.getElementById(
-            "products"
-        );
+    let list = [...currentProducts];
 
-    if (!container) return;
+    if (currentCategory !== "all") {
 
-
-    let list;
-
-
-    if (customList) {
-
-        list =
-            [...customList];
-
-    } else {
-
-        list =
-            currentCategory === "all"
-                ? [...products]
-                : products.filter(
-                    product =>
-                        product.category ===
-                        currentCategory
-                );
-
-    }
-
-
-    const sort =
-        document.getElementById(
-            "sortProducts"
-        )?.value;
-
-
-    if (sort === "cheap") {
-
-        list.sort(
-            (a, b) =>
-                a.price - b.price
+        list = list.filter(product =>
+            product.category === currentCategory
         );
 
     }
 
-
-    if (sort === "expensive") {
-
-        list.sort(
-            (a, b) =>
-                b.price - a.price
-        );
-
-    }
-
+    list = list.slice(0, visibleProducts);
 
     if (!list.length) {
 
-        container.innerHTML = `
-
-            <div class="empty-state">
-
-                <strong>
-                    НИЧЕГО НЕ НАЙДЕНО
-                </strong>
-
-                Попробуй другой запрос.
-
+        productsGrid.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                padding:80px 20px;
+                text-align:center;
+                color:#858b80;
+            ">
+                Товары не найдены.
             </div>
-
         `;
+
+        return;
+    }
+
+    productsGrid.innerHTML =
+        list.map(createProductCard).join("");
+
+}
+
+
+/* ================= SORT ================= */
+
+function sortProducts(value) {
+
+    let list = [...products];
+
+    if (value === "popular") {
+
+        list.sort((a,b) => b.popular - a.popular);
+
+    }
+
+    if (value === "new") {
+
+        list.sort((a,b) => Number(b.isNew) - Number(a.isNew));
+
+    }
+
+    if (value === "cheap") {
+
+        list.sort((a,b) => a.price - b.price);
+
+    }
+
+    if (value === "expensive") {
+
+        list.sort((a,b) => b.price - a.price);
+
+    }
+
+    if (value === "discount") {
+
+        list.sort((a,b) =>
+            (b.discount || 0) - (a.discount || 0)
+        );
+
+    }
+
+    if (value === "rating") {
+
+        list.sort((a,b) => b.rating - a.rating);
+
+    }
+
+    currentProducts = list;
+
+    visibleProducts = 8;
+
+    renderProducts();
+
+}
+
+
+/* ================= DEALS ================= */
+
+function renderDeals() {
+
+    const deals = products
+        .filter(product => product.discount)
+        .sort((a,b) => b.discount - a.discount)
+        .slice(0,4);
+
+    dealsGrid.innerHTML =
+        deals.map(createProductCard).join("");
+
+}
+
+
+/* ================= CART ================= */
+
+function saveCart() {
+
+    localStorage.setItem(
+        "nexoraCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+function addToCart(id, quantity = 1) {
+
+    const product = products.find(
+        item => item.id === id
+    );
+
+    if (!product) return;
+
+    const existing = cart.find(
+        item => item.id === id
+    );
+
+    if (existing) {
+
+        existing.quantity += quantity;
+
+    } else {
+
+        cart.push({
+            id: product.id,
+            quantity
+        });
+
+    }
+
+    saveCart();
+
+    renderCart();
+
+    showToast(`${product.name} добавлен в корзину`);
+
+}
+
+
+function removeFromCart(id) {
+
+    cart = cart.filter(
+        item => item.id !== id
+    );
+
+    saveCart();
+
+    renderCart();
+
+}
+
+
+function changeQuantity(id, amount) {
+
+    const item = cart.find(
+        item => item.id === id
+    );
+
+    if (!item) return;
+
+    item.quantity += amount;
+
+    if (item.quantity <= 0) {
+
+        removeFromCart(id);
 
         return;
 
     }
 
-
-    container.innerHTML =
-        list
-            .map(productCard)
-            .join("");
-
-}
-
-
-// ==========================================
-// NEW PRODUCTS
-// ==========================================
-
-function renderNewProducts() {
-
-    const container =
-        document.getElementById(
-            "newProducts"
-        );
-
-    if (!container) return;
-
-
-    container.innerHTML =
-        products
-            .slice(0, 4)
-            .map(productCard)
-            .join("");
-
-}
-
-
-// ==========================================
-// CATEGORY
-// ==========================================
-
-document
-    .querySelectorAll(
-        ".category-card"
-    )
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                document
-                    .querySelectorAll(
-                        ".category-card"
-                    )
-                    .forEach(item => {
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-
-                button.classList.add(
-                    "active"
-                );
-
-
-                currentCategory =
-                    button.dataset.category;
-
-
-                renderProducts();
-
-
-                document
-                    .getElementById(
-                        "catalog"
-                    )
-                    ?.scrollIntoView({
-                        behavior:
-                            "smooth"
-                    });
-
-            }
-        );
-
-    });
-
-
-// ==========================================
-// SORT
-// ==========================================
-
-document
-    .getElementById(
-        "sortProducts"
-    )
-    ?.addEventListener(
-        "change",
-        () => renderProducts()
-    );
-
-
-// ==========================================
-// PRODUCT CLICKS
-// ==========================================
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const add =
-            event.target.closest(
-                "[data-add]"
-            );
-
-
-        const favorite =
-            event.target.closest(
-                "[data-favorite]"
-            );
-
-
-        const card =
-            event.target.closest(
-                ".product-card"
-            );
-
-
-        if (add) {
-
-            addToCart(
-                Number(
-                    add.dataset.add
-                )
-            );
-
-            return;
-
-        }
-
-
-        if (favorite) {
-
-            toggleFavorite(
-                Number(
-                    favorite.dataset
-                        .favorite
-                )
-            );
-
-            return;
-
-        }
-
-
-        if (
-            card &&
-            !event.target.closest(
-                "button"
-            )
-        ) {
-
-            openProduct(
-                Number(
-                    card.dataset
-                        .productId
-                )
-            );
-
-        }
-
-    }
-);
-
-
-// ==========================================
-// ADD CART
-// ==========================================
-
-function addToCart(id) {
-
-    const product =
-        productById(id);
-
-    if (!product) return;
-
-
-    const existing =
-        cart.find(
-            item =>
-                item.id === id &&
-                !item.selectedMemory
-        );
-
-
-    if (existing) {
-
-        existing.quantity++;
-
-    } else {
-
-        cart.push({
-
-            id,
-
-            quantity: 1
-
-        });
-
-    }
-
-
-    saveData();
-
-    updateCounters();
+    saveCart();
 
     renderCart();
 
-    showToast(
-        `${product.name} добавлен в корзину`
-    );
-
 }
 
 
-// ==========================================
-// CART TOTAL
-// ==========================================
-
-function getCartTotal() {
+function getCartCount() {
 
     return cart.reduce(
-        (sum, item) => {
-
-            const product =
-                productById(
-                    item.id
-                );
-
-
-            if (!product) {
-                return sum;
-            }
-
-
-            const itemPrice =
-                item.selectedPrice ||
-                product.price;
-
-
-            return sum +
-                itemPrice *
-                item.quantity;
-
-        },
+        (sum,item) => sum + item.quantity,
         0
     );
 
 }
 
 
-// ==========================================
-// CART
-// ==========================================
+function getCartTotal() {
+
+    return cart.reduce((sum,item) => {
+
+        const product = products.find(
+            p => p.id === item.id
+        );
+
+        return sum +
+            (product ? product.price * item.quantity : 0);
+
+    },0);
+
+}
+
 
 function renderCart() {
 
-    const container =
-        document.getElementById(
-            "cartItems"
-        );
+    const count = getCartCount();
 
-    const total =
-        document.getElementById(
-            "cartTotal"
-        );
+    const total = getCartTotal();
 
+    cartCount.textContent = count;
 
-    if (!container) return;
+    cartSubtotal.textContent =
+        formatPrice(total);
+
+    cartTotal.textContent =
+        formatPrice(total);
 
 
     if (!cart.length) {
 
-        container.innerHTML = `
+        cartItems.innerHTML = "";
 
-            <div class="empty-state">
+        cartEmpty.classList.add("active");
 
-                <strong>
-                    КОРЗИНА ПУСТА
-                </strong>
-
-                Добавь товары из каталога.
-
-            </div>
-
-        `;
-
-        if (total) {
-
-            total.textContent =
-                "$0";
-
-        }
+        cartFooter.style.display = "none";
 
         return;
 
     }
 
 
-    container.innerHTML =
-        cart
-            .map(
-                (item, index) => {
+    cartEmpty.classList.remove("active");
 
-                    const product =
-                        productById(
-                            item.id
-                        );
+    cartFooter.style.display = "block";
 
 
-                    if (!product) {
-                        return "";
-                    }
+    cartItems.innerHTML = cart.map(item => {
 
-
-                    const itemPrice =
-                        item.selectedPrice ||
-                        product.price;
-
-
-                    return `
-
-                        <div class="cart-item">
-
-                            <div class="cart-item-image">
-
-                                <img
-                                    src="${
-                                        product
-                                            .images[
-                                                item.selectedColor ||
-                                                "Black"
-                                            ]
-                                    }"
-                                    alt="${product.name}">
-
-                            </div>
-
-
-                            <div class="cart-item-info">
-
-                                <h3>
-                                    ${product.name}
-                                </h3>
-
-
-                                ${
-                                    item.selectedMemory
-                                        ? `
-                                            <small>
-                                                ${
-                                                    item.selectedMemory
-                                                } GB
-                                                ·
-                                                ${
-                                                    item.selectedColor ||
-                                                    "Black"
-                                                }
-                                            </small>
-                                        `
-                                        : ""
-                                }
-
-
-                                <span class="cart-item-price">
-
-                                    ${money(
-                                        itemPrice *
-                                        item.quantity
-                                    )}
-
-                                </span>
-
-
-                                <div class="cart-quantity">
-
-                                    <button
-                                        data-minus="${index}">
-                                        −
-                                    </button>
-
-                                    <span>
-                                        ${item.quantity}
-                                    </span>
-
-                                    <button
-                                        data-plus="${index}">
-                                        +
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-
-                            <button
-                                class="remove-cart"
-                                data-remove="${index}">
-
-                                ×
-
-                            </button>
-
-                        </div>
-
-                    `;
-
-                }
-            )
-            .join("");
-
-
-    if (total) {
-
-        total.textContent =
-            money(
-                getCartTotal()
-            );
-
-    }
-
-}
-
-
-// ==========================================
-// CART CONTROLS
-// ==========================================
-
-document
-    .getElementById(
-        "cartItems"
-    )
-    ?.addEventListener(
-        "click",
-        event => {
-
-            const plus =
-                event.target.closest(
-                    "[data-plus]"
-                );
-
-
-            const minus =
-                event.target.closest(
-                    "[data-minus]"
-                );
-
-
-            const remove =
-                event.target.closest(
-                    "[data-remove]"
-                );
-
-
-            if (plus) {
-
-                changeQuantity(
-                    Number(
-                        plus.dataset.plus
-                    ),
-                    1
-                );
-
-            }
-
-
-            if (minus) {
-
-                changeQuantity(
-                    Number(
-                        minus.dataset.minus
-                    ),
-                    -1
-                );
-
-            }
-
-
-            if (remove) {
-
-                cart.splice(
-                    Number(
-                        remove.dataset.remove
-                    ),
-                    1
-                );
-
-
-                saveData();
-
-                updateCounters();
-
-                renderCart();
-
-            }
-
-        }
-    );
-
-
-function changeQuantity(
-    index,
-    amount
-) {
-
-    if (!cart[index]) return;
-
-
-    cart[index].quantity +=
-        amount;
-
-
-    if (
-        cart[index].quantity <= 0
-    ) {
-
-        cart.splice(
-            index,
-            1
+        const product = products.find(
+            p => p.id === item.id
         );
 
-    }
+        if (!product) return "";
 
+        return `
 
-    saveData();
+            <div class="cart-item">
 
-    updateCounters();
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
 
-    renderCart();
+                <div>
+
+                    <div class="cart-item-name">
+                        ${product.name}
+                    </div>
+
+                    <div class="cart-item-price">
+                        ${formatPrice(product.price)}
+                    </div>
+
+                    <div class="cart-quantity">
+
+                        <button
+                            data-cart-minus="${product.id}"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            data-cart-plus="${product.id}"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="remove-cart"
+                    data-remove="${product.id}"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        `;
+
+    }).join("");
 
 }
 
 
-// ==========================================
-// CART OPEN
-// ==========================================
+/* ================= CART OPEN/CLOSE ================= */
 
 function openCart() {
 
-    document
-        .getElementById(
-            "overlay"
-        )
-        ?.classList.add(
-            "active"
-        );
+    cartElement.classList.add("active");
 
+    cartOverlay.classList.add("active");
 
-    document
-        .getElementById(
-            "cartDrawer"
-        )
-        ?.classList.add(
-            "active"
-        );
+    document.body.classList.add("no-scroll");
 
 }
 
 
 function closeCart() {
 
-    document
-        .getElementById(
-            "overlay"
-        )
-        ?.classList.remove(
-            "active"
-        );
+    cartElement.classList.remove("active");
 
+    cartOverlay.classList.remove("active");
 
-    document
-        .getElementById(
-            "cartDrawer"
-        )
-        ?.classList.remove(
-            "active"
-        );
+    document.body.classList.remove("no-scroll");
 
 }
 
 
-document
-    .getElementById(
-        "cartButton"
-    )
-    ?.addEventListener(
-        "click",
-        openCart
-    );
+/* ================= TOAST ================= */
 
+let toastTimer;
 
-document
-    .getElementById(
-        "closeCart"
-    )
-    ?.addEventListener(
-        "click",
-        closeCart
-    );
+function showToast(message) {
 
+    toast.querySelector("p").textContent =
+        message;
 
-document
-    .getElementById(
-        "overlay"
-    )
-    ?.addEventListener(
-        "click",
-        closeCart
-    );
+    toast.classList.add("active");
 
+    clearTimeout(toastTimer);
 
-// ==========================================
-// FAVORITES
-// ==========================================
+    toastTimer = setTimeout(() => {
 
-function toggleFavorite(id) {
+        toast.classList.remove("active");
 
-    if (
-        favorites.includes(id)
-    ) {
-
-        favorites =
-            favorites.filter(
-                item =>
-                    item !== id
-            );
-
-        showToast(
-            "Удалено из избранного"
-        );
-
-    } else {
-
-        favorites.push(id);
-
-        showToast(
-            "Добавлено в избранное ♥"
-        );
-
-    }
-
-
-    saveData();
-
-    updateCounters();
-
-    renderProducts();
-
-    renderNewProducts();
-
-    renderFavorites();
+    },3000);
 
 }
 
 
-function renderFavorites() {
+/* ================= PRODUCT MODAL ================= */
 
-    const container =
-        document.getElementById(
-            "favoritesList"
-        );
+function openProductModal(id) {
 
-    if (!container) return;
-
-
-    const list =
-        products.filter(
-            product =>
-                favorites.includes(
-                    product.id
-                )
-        );
-
-
-    if (!list.length) {
-
-        container.innerHTML = `
-
-            <div class="empty-state">
-
-                <strong>
-                    ИЗБРАННОЕ ПУСТО
-                </strong>
-
-                Нажми ♡ на товаре.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    container.innerHTML =
-        list
-            .map(
-                product => `
-
-                    <div class="favorite-item">
-
-                        <img
-                            src="${product.images.Black}"
-                            alt="${product.name}">
-
-                        <div>
-
-                            <h3>
-                                ${product.name}
-                            </h3>
-
-                            <strong>
-                                ${money(product.price)}
-                            </strong>
-
-                        </div>
-
-
-                        <button
-                            class="remove-cart"
-                            data-favorite-remove="${product.id}">
-
-                            ×
-
-                        </button>
-
-                    </div>
-
-                `
-            )
-            .join("");
-
-}
-
-
-document
-    .getElementById(
-        "favoritesButton"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
-
-            renderFavorites();
-
-            openModal(
-                "favoritesModal"
-            );
-
-        }
+    const product = products.find(
+        item => item.id === id
     );
-
-
-document
-    .getElementById(
-        "favoritesList"
-    )
-    ?.addEventListener(
-        "click",
-        event => {
-
-            const button =
-                event.target.closest(
-                    "[data-favorite-remove]"
-                );
-
-
-            if (!button) return;
-
-
-            toggleFavorite(
-                Number(
-                    button.dataset
-                        .favoriteRemove
-                )
-            );
-
-        }
-    );
-
-
-// ==========================================
-// PRODUCT MODAL
-// ==========================================
-
-function openProduct(id) {
-
-    const product =
-        productById(id);
 
     if (!product) return;
 
-
-    selectedProduct =
-        product;
-
-
-    selectedColor =
-        "Black";
-
-
-    selectedMemory =
-        product.memories
-            ? Object.keys(
-                product.memories
-            )[0]
-            : null;
-
+    modalProduct = product;
 
     modalQuantity = 1;
 
+    document.getElementById("modalProductImage").src =
+        product.image;
 
-    document.getElementById(
-        "modalCategory"
-    ).textContent =
-        product.categoryName;
-
-
-    document.getElementById(
-        "modalName"
-    ).textContent =
+    document.getElementById("modalProductImage").alt =
         product.name;
 
+    document.getElementById("modalBrand").textContent =
+        product.brand;
 
-    document.getElementById(
-        "modalDescription"
-    ).textContent =
+    document.getElementById("modalName").textContent =
+        product.name;
+
+    document.getElementById("modalRating").textContent =
+        `★ ${product.rating} / 5  •  ${product.reviews} отзывов`;
+
+    document.getElementById("modalDescription").textContent =
         product.description;
 
+    document.getElementById("modalPrice").textContent =
+        formatPrice(product.price);
 
-    document.getElementById(
-        "modalReviews"
-    ).textContent =
-        `${product.rating} / 5 · ${product.reviews} отзывов`;
+    document.getElementById("modalOldPrice").textContent =
+        product.oldPrice
+            ? formatPrice(product.oldPrice)
+            : "";
 
-
-    document.getElementById(
-        "modalStock"
-    ).textContent =
-        `${product.stock} шт.`;
-
-
-    document.getElementById(
-        "specScreen"
-    ).textContent =
-        product.specs?.screen ||
-        "—";
+    document.getElementById("modalQuantity").textContent =
+        modalQuantity;
 
 
-    document.getElementById(
-        "specCpu"
-    ).textContent =
-        product.specs?.cpu ||
-        "—";
+    const specs =
+        document.getElementById("modalSpecs");
+
+    specs.innerHTML =
+        Object.entries(product.details).map(
+            ([key,value]) => `
+
+                <div class="modal-spec">
+
+                    <small>${key}</small>
+
+                    <strong>${value}</strong>
+
+                </div>
+
+            `
+        ).join("");
 
 
-    document.getElementById(
-        "specCamera"
-    ).textContent =
-        product.specs?.camera ||
-        "—";
+    productModal.classList.add("active");
 
-
-    document.getElementById(
-        "modalOldPrice"
-    ).textContent =
-        money(
-            product.oldPrice
-        );
-
-
-    document.getElementById(
-        "modalQuantity"
-    ).textContent =
-        "1";
-
-
-    updateProductImage();
-
-    updateModalPrice();
-
-    updateColorButtons();
-
-    updateMemoryButtons();
-
-
-    openModal(
-        "productModal"
-    );
+    document.body.classList.add("no-scroll");
 
 }
 
 
-// ==========================================
-// IMAGE
-// ==========================================
+function closeProductModal() {
 
-function updateProductImage() {
+    productModal.classList.remove("active");
 
-    if (!selectedProduct) return;
+    document.body.classList.remove("no-scroll");
 
-
-    const image =
-        document.querySelector(
-            "#modalImage img"
-        );
-
-
-    if (!image) return;
-
-
-    const newImage =
-        selectedProduct.images[
-            selectedColor
-        ] ||
-        selectedProduct.images.Black;
-
-
-    image.style.opacity = "0";
-
-
-    setTimeout(() => {
-
-        image.src =
-            newImage;
-
-        image.onload = () => {
-
-            image.style.opacity = "1";
-
-        };
-
-    }, 100);
+    modalProduct = null;
 
 }
 
 
-// ==========================================
-// PRICE
-// ==========================================
-
-function updateModalPrice() {
-
-    if (!selectedProduct) return;
-
-
-    let value =
-        selectedProduct.price;
-
-
-    if (
-        selectedMemory &&
-        selectedProduct.memories
-    ) {
-
-        value =
-            selectedProduct
-                .memories[
-                    selectedMemory
-                ];
-
-    }
-
-
-    document.getElementById(
-        "modalPrice"
-    ).textContent =
-        money(value);
-
-}
-
-
-// ==========================================
-// COLOR
-// ==========================================
-
-function updateColorButtons() {
-
-    document
-        .querySelectorAll(
-            ".color-option"
-        )
-        .forEach(button => {
-
-            button.classList.toggle(
-                "active",
-                button.dataset.color ===
-                selectedColor
-            );
-
-        });
-
-}
-
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const button =
-            event.target.closest(
-                ".color-option"
-            );
-
-
-        if (!button) return;
-
-
-        if (!selectedProduct) return;
-
-
-        selectedColor =
-            button.dataset.color;
-
-
-        updateColorButtons();
-
-        updateProductImage();
-
-
-        showToast(
-            `Цвет: ${selectedColor}`
-        );
-
-    }
-);
-
-
-// ==========================================
-// MEMORY
-// ==========================================
-
-function updateMemoryButtons() {
-
-    document
-        .querySelectorAll(
-            ".memory-option"
-        )
-        .forEach(button => {
-
-            const memory =
-                button.dataset.memory;
-
-
-            if (
-                selectedProduct &&
-                selectedProduct.memories &&
-                selectedProduct.memories[
-                    memory
-                ]
-            ) {
-
-                button.style.display =
-                    "inline-flex";
-
-            } else {
-
-                button.style.display =
-                    "none";
-
-            }
-
-
-            button.classList.toggle(
-                "active",
-                memory ===
-                String(
-                    selectedMemory
-                )
-            );
-
-        });
-
-}
-
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const button =
-            event.target.closest(
-                ".memory-option"
-            );
-
-
-        if (!button) return;
-
-
-        if (!selectedProduct) return;
-
-
-        selectedMemory =
-            button.dataset.memory;
-
-
-        updateMemoryButtons();
-
-        updateModalPrice();
-
-
-        showToast(
-            `Память: ${selectedMemory} GB`
-        );
-
-    }
-);
-
-
-// ==========================================
-// QUANTITY
-// ==========================================
-
-document
-    .getElementById(
-        "modalPlus"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
-
-            if (
-                selectedProduct &&
-                modalQuantity >=
-                selectedProduct.stock
-            ) {
-
-                showToast(
-                    "Больше нет на складе"
-                );
-
-                return;
-
-            }
-
-
-            modalQuantity++;
-
-
-            document.getElementById(
-                "modalQuantity"
-            ).textContent =
-                modalQuantity;
-
-        }
-    );
-
-
-document
-    .getElementById(
-        "modalMinus"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
-
-            if (
-                modalQuantity <= 1
-            ) return;
-
-
-            modalQuantity--;
-
-
-            document.getElementById(
-                "modalQuantity"
-            ).textContent =
-                modalQuantity;
-
-        }
-    );
-
-
-// ==========================================
-// ADD FROM MODAL
-// ==========================================
-
-document
-    .getElementById(
-        "modalAdd"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
-
-            if (!selectedProduct) return;
-
-
-            const itemPrice =
-                selectedMemory &&
-                selectedProduct.memories
-                    ? selectedProduct
-                        .memories[
-                            selectedMemory
-                        ]
-                    : selectedProduct.price;
-
-
-            const existing =
-                cart.find(
-                    item =>
-                        item.id ===
-                            selectedProduct.id &&
-                        item.selectedMemory ===
-                            selectedMemory &&
-                        item.selectedColor ===
-                            selectedColor
-                );
-
-
-            if (existing) {
-
-                existing.quantity +=
-                    modalQuantity;
-
-            } else {
-
-                cart.push({
-
-                    id:
-                        selectedProduct.id,
-
-                    quantity:
-                        modalQuantity,
-
-                    selectedPrice:
-                        itemPrice,
-
-                    selectedMemory:
-                        selectedMemory,
-
-                    selectedColor:
-                        selectedColor
-
-                });
-
-            }
-
-
-            saveData();
-
-            updateCounters();
-
-            renderCart();
-
-
-            showToast(
-                `${selectedProduct.name} добавлен в корзину`
-            );
-
-
-            closeModal(
-                "productModal"
-            );
-
-
-            modalQuantity = 1;
-
-        }
-    );
-
-
-// ==========================================
-// MODAL
-// ==========================================
-
-function openModal(id) {
-
-    document
-        .getElementById(id)
-        ?.classList.add(
-            "active"
-        );
-
-}
-
-
-function closeModal(id) {
-
-    document
-        .getElementById(id)
-        ?.classList.remove(
-            "active"
-        );
-
-}
-
-
-document
-    .querySelectorAll(
-        "[data-close]"
-    )
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                closeModal(
-                    button.dataset.close
-                );
-
-            }
-        );
-
-    });
-
-
-document
-    .querySelectorAll(
-        ".modal"
-    )
-    .forEach(modal => {
-
-        modal.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    event.target ===
-                    modal
-                ) {
-
-                    modal.classList.remove(
-                        "active"
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-// ==========================================
-// SEARCH
-// ==========================================
+/* ================= SEARCH ================= */
 
 function openSearch() {
 
-    const panel =
-        document.getElementById(
-            "searchPanel"
-        );
+    searchOverlay.classList.add("active");
 
+    document.body.classList.add("no-scroll");
 
-    if (!panel) return;
+    setTimeout(() => {
 
+        searchInput.focus();
 
-    panel.classList.add(
-        "active"
-    );
-
-
-    setTimeout(
-        () => {
-
-            document
-                .getElementById(
-                    "searchInput"
-                )
-                ?.focus();
-
-        },
-        100
-    );
+    },100);
 
 }
 
 
 function closeSearch() {
 
-    document
-        .getElementById(
-            "searchPanel"
-        )
-        ?.classList.remove(
-            "active"
-        );
+    searchOverlay.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+    searchInput.value = "";
+
+    searchResults.innerHTML = "";
 
 }
 
 
-document
-    .getElementById(
-        "searchButton"
-    )
-    ?.addEventListener(
-        "click",
-        openSearch
-    );
-
-
-document
-    .getElementById(
-        "openSearch"
-    )
-    ?.addEventListener(
-        "click",
-        openSearch
-    );
-
-
-document
-    .getElementById(
-        "closeSearch"
-    )
-    ?.addEventListener(
-        "click",
-        closeSearch
-    );
-
-
-// ==========================================
-// SEARCH INPUT
-// ==========================================
-
-document
-    .getElementById(
-        "searchInput"
-    )
-    ?.addEventListener(
-        "input",
-        event => {
-
-            const query =
-                event.target.value
-                    .toLowerCase()
-                    .trim();
-
-
-            const result =
-                products.filter(
-                    product =>
-                        product.name
-                            .toLowerCase()
-                            .includes(
-                                query
-                            ) ||
-
-                        product.categoryName
-                            .toLowerCase()
-                            .includes(
-                                query
-                            )
-                );
-
-
-            renderProducts(
-                result
-            );
-
-        }
-    );
-
-
-// ==========================================
-// RANDOM
-// ==========================================
-
-document
-    .getElementById(
-        "randomProduct"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
-
-            const product =
-                products[
-                    Math.floor(
-                        Math.random() *
-                        products.length
-                    )
-                ];
-
-
-            openProduct(
-                product.id
-            );
-
-        }
-    );
-
+function searchProducts(query) {
 
-// ==========================================
-// HERO
-// ==========================================
+    const value = query
+        .toLowerCase()
+        .trim();
 
-document
-    .querySelector(
-        "[data-hero-product]"
-    )
-    ?.addEventListener(
-        "click",
-        event => {
+    if (!value) {
 
-            addToCart(
-                Number(
-                    event.currentTarget
-                        .dataset
-                        .heroProduct
-                )
-            );
+        searchResults.innerHTML = "";
 
-        }
-    );
+        return;
 
+    }
 
-// ==========================================
-// PROMO
-// ==========================================
 
-document
-    .getElementById(
-        "copyPromo"
-    )
-    ?.addEventListener(
-        "click",
-        async () => {
+    const results = products.filter(product => {
 
-            try {
+        const text = [
 
-                await navigator
-                    .clipboard
-                    .writeText(
-                        "NEONIX30"
-                    );
+            product.name,
+            product.brand,
+            product.category,
+            product.specs.join(" ")
 
-                showToast(
-                    "NEONIX30 скопирован"
-                );
+        ].join(" ").toLowerCase();
 
-            } catch {
+        return text.includes(value);
 
-                showToast(
-                    "Промокод: NEONIX30"
-                );
+    }).slice(0,8);
 
-            }
 
-        }
-    );
+    if (!results.length) {
 
+        searchResults.innerHTML = `
 
-// ==========================================
-// CHECKOUT
-// ==========================================
-
-document
-    .getElementById(
-        "checkoutButton"
-    )
-    ?.addEventListener(
-        "click",
-        () => {
-
-            if (!cart.length) {
-
-                showToast(
-                    "Корзина пуста"
-                );
-
-                return;
-
-            }
-
-
-            document.getElementById(
-                "checkoutTotal"
-            ).textContent =
-                money(
-                    getCartTotal()
-                );
-
-
-            closeCart();
-
-            openModal(
-                "checkoutModal"
-            );
-
-        }
-    );
-
-
-// ==========================================
-// ORDER
-// ==========================================
-
-document
-    .getElementById(
-        "checkoutForm"
-    )
-    ?.addEventListener(
-        "submit",
-        event => {
-
-            event.preventDefault();
-
-
-            if (!cart.length) return;
-
-
-            const number =
-                "NX-" +
-                Math.floor(
-                    100000 +
-                    Math.random() *
-                    900000
-                );
-
-
-            const order = {
-
-                number,
-
-                total:
-                    getCartTotal(),
-
-                status: 0,
-
-                date:
-                    new Date()
-                        .toLocaleString(
-                            "ru-RU"
-                        )
-
-            };
-
-
-            localStorage.setItem(
-                "neonix_order",
-                JSON.stringify(
-                    order
-                )
-            );
-
-
-            cart = [];
-
-
-            saveData();
-
-            updateCounters();
-
-            renderCart();
-
-
-            event.target.reset();
-
-
-            closeModal(
-                "checkoutModal"
-            );
-
-
-            showToast(
-                `Заказ ${number} оформлен`
-            );
-
-        }
-    );
-
-
-// ==========================================
-// ORDER STATUS
-// ==========================================
-
-function renderOrderStatus() {
-
-    const container =
-        document.getElementById(
-            "orderStatus"
-        );
-
-
-    if (!container) return;
-
-
-    const order =
-        JSON.parse(
-            localStorage.getItem(
-                "neonix_order"
-            ) || "null"
-        );
-
-
-    if (!order) {
-
-        container.innerHTML = `
-
-            <div class="empty-state">
-
-                <strong>
-                    ЗАКАЗОВ НЕТ
-                </strong>
-
-                Оформи заказ,
-                чтобы отслеживать его.
-
+            <div style="
+                padding:30px 10px;
+                color:#858b80;
+                font-size:11px;
+            ">
+                Ничего не найдено.
             </div>
 
         `;
@@ -2442,311 +1088,693 @@ function renderOrderStatus() {
     }
 
 
-    const steps = [
+    searchResults.innerHTML =
+        results.map(product => `
 
-        "Заказ принят",
+            <div
+                class="search-result"
+                data-search-product="${product.id}"
+            >
 
-        "Сборка заказа",
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
 
-        "Передан курьеру",
+                <div>
 
-        "Доставлен"
+                    <strong>
+                        ${product.name}
+                    </strong>
 
-    ];
+                    <span>
+                        ${formatPrice(product.price)}
+                    </span>
 
-
-    container.innerHTML = `
-
-        <div class="order-box">
-
-            <div class="order-number">
-
-                <span>
-                    ${order.number}
-                </span>
-
-                <strong>
-                    ${money(order.total)}
-                </strong>
+                </div>
 
             </div>
 
-
-            ${steps.map(
-                (step, index) => `
-
-                    <div class="order-step">
-
-                        <div class="
-                            order-dot
-                            ${
-                                index <=
-                                order.status
-                                    ? "active"
-                                    : ""
-                            }
-                        ">
-
-                            ${
-                                index <
-                                order.status
-                                    ? "✓"
-                                    : index + 1
-                            }
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                ${step}
-                            </strong>
-
-                            <span>
-
-                                ${
-                                    index <=
-                                    order.status
-                                        ? "Выполнено"
-                                        : "Ожидает"
-                                }
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                `
-            ).join("")}
-
-        </div>
-
-    `;
+        `).join("");
 
 }
 
 
-// ==========================================
-// ORDER BUTTON
-// ==========================================
+/* ================= BUILDER ================= */
 
-const headerActions =
-    document.querySelector(
-        ".header-actions"
-    );
+const builderIds = [
+    "buildCpu",
+    "buildGpu",
+    "buildRam",
+    "buildSsd",
+    "buildBoard",
+    "buildPsu"
+];
 
 
-if (
-    headerActions &&
-    !document.getElementById(
-        "orderButton"
-    )
-) {
+function calculateBuild() {
 
-    const button =
-        document.createElement(
-            "button"
+    let total = 0;
+
+    let power = 0;
+
+
+    builderIds.forEach(id => {
+
+        const select =
+            document.getElementById(id);
+
+        const [name, price] =
+            select.value.split("|");
+
+        total += Number(price);
+
+    });
+
+
+    const gpu =
+        document.getElementById("buildGpu")
+            .value.split("|")[0];
+
+    if (gpu.includes("5090")) power += 575;
+    else if (gpu.includes("5080")) power += 360;
+    else if (gpu.includes("5070")) power += 250;
+    else power += 180;
+
+
+    power += 220;
+
+
+    document.getElementById("buildPrice")
+        .textContent = formatPrice(total);
+
+    document.getElementById("buildPower")
+        .textContent = `${power}W`;
+
+    return total;
+
+}
+
+
+function getBuildData() {
+
+    return builderIds.map(id => {
+
+        const [name, price] =
+            document
+                .getElementById(id)
+                .value
+                .split("|");
+
+        return {
+            name,
+            price: Number(price)
+        };
+
+    });
+
+}
+
+
+/* ================= DEAL TIMER ================= */
+
+let dealEnd =
+    Date.now() + 1000 * 60 * 60 * 8;
+
+
+function updateDealTimer() {
+
+    const remaining =
+        Math.max(0, dealEnd - Date.now());
+
+    const hours =
+        Math.floor(remaining / 3600000);
+
+    const minutes =
+        Math.floor(
+            (remaining % 3600000) / 60000
+        );
+
+    const seconds =
+        Math.floor(
+            (remaining % 60000) / 1000
         );
 
 
-    button.id =
-        "orderButton";
-
-    button.className =
-        "header-btn";
-
-    button.textContent =
-        "📦";
-
-    button.title =
-        "Статус заказа";
+    document.getElementById("dealTimer")
+        .textContent =
+        `${String(hours).padStart(2,"0")}:` +
+        `${String(minutes).padStart(2,"0")}:` +
+        `${String(seconds).padStart(2,"0")}`;
 
 
-    headerActions.insertBefore(
-        button,
-        document.getElementById(
-            "cartButton"
-        )
-    );
+    if (remaining <= 0) {
 
+        dealEnd =
+            Date.now() + 1000 * 60 * 60 * 8;
 
-    button.addEventListener(
-        "click",
-        () => {
-
-            renderOrderStatus();
-
-            openModal(
-                "orderModal"
-            );
-
-        }
-    );
+    }
 
 }
 
 
-// ==========================================
-// ESC
-// ==========================================
+setInterval(updateDealTimer,1000);
+
+updateDealTimer();
+
+
+/* ================= REVIEWS ================= */
+
+function renderReviews() {
+
+    const visible = [];
+
+    for (let i = 0; i < 3; i++) {
+
+        visible.push(
+            reviews[
+                (reviewIndex + i) % reviews.length
+            ]
+        );
+
+    }
+
+
+    document.getElementById("reviewsSlider")
+        .innerHTML =
+        visible.map(review => `
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="avatar">
+                        ${review.avatar}
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                </div>
+
+                <p>
+                    “${review.text}”
+                </p>
+
+                <div class="review-author">
+
+                    <strong>
+                        ${review.name}
+                    </strong>
+
+                    <span>
+                        Купил: ${review.product}
+                    </span>
+
+                </div>
+
+            </article>
+
+        `).join("");
+
+}
+
+
+/* ================= EVENTS ================= */
+
+
+/* Header */
+
+window.addEventListener("scroll", () => {
+
+    const header =
+        document.getElementById("header");
+
+    if (window.scrollY > 30) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* Search */
+
+document
+    .getElementById("searchBtn")
+    .addEventListener("click", openSearch);
+
+
+document
+    .getElementById("closeSearch")
+    .addEventListener("click", closeSearch);
+
+
+searchOverlay.addEventListener("click", event => {
+
+    if (event.target === searchOverlay) {
+
+        closeSearch();
+
+    }
+
+});
+
+
+searchInput.addEventListener(
+    "input",
+    event => searchProducts(event.target.value)
+);
+
+
+/* Mobile menu */
+
+document
+    .getElementById("mobileMenuBtn")
+    .addEventListener("click", () => {
+
+        document
+            .getElementById("mobileMenu")
+            .classList.toggle("active");
+
+    });
+
+
+document
+    .querySelectorAll(".mobile-menu a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("mobileMenu")
+                .classList.remove("active");
+
+        });
+
+    });
+
+
+/* Cart */
+
+document
+    .getElementById("cartBtn")
+    .addEventListener("click", openCart);
+
+
+document
+    .getElementById("closeCart")
+    .addEventListener("click", closeCart);
+
+
+cartOverlay.addEventListener(
+    "click",
+    closeCart
+);
+
+
+document
+    .getElementById("continueShopping")
+    .addEventListener("click", () => {
+
+        closeCart();
+
+        document
+            .getElementById("catalog")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+
+/* Product buttons */
+
+document.addEventListener("click", event => {
+
+    const addButton =
+        event.target.closest("[data-add]");
+
+    if (addButton) {
+
+        addToCart(
+            Number(addButton.dataset.add)
+        );
+
+        return;
+
+    }
+
+
+    const detailButton =
+        event.target.closest("[data-details]");
+
+    if (detailButton) {
+
+        openProductModal(
+            Number(detailButton.dataset.details)
+        );
+
+        return;
+
+    }
+
+
+    const removeButton =
+        event.target.closest("[data-remove]");
+
+    if (removeButton) {
+
+        removeFromCart(
+            Number(removeButton.dataset.remove)
+        );
+
+        return;
+
+    }
+
+
+    const plusButton =
+        event.target.closest("[data-cart-plus]");
+
+    if (plusButton) {
+
+        changeQuantity(
+            Number(plusButton.dataset.cartPlus),
+            1
+        );
+
+        return;
+
+    }
+
+
+    const minusButton =
+        event.target.closest("[data-cart-minus]");
+
+    if (minusButton) {
+
+        changeQuantity(
+            Number(minusButton.dataset.cartMinus),
+            -1
+        );
+
+        return;
+
+    }
+
+
+    const searchProduct =
+        event.target.closest("[data-search-product]");
+
+    if (searchProduct) {
+
+        closeSearch();
+
+        openProductModal(
+            Number(searchProduct.dataset.searchProduct)
+        );
+
+    }
+
+});
+
+
+/* Product modal */
+
+document
+    .getElementById("closeProduct")
+    .addEventListener(
+        "click",
+        closeProductModal
+    );
+
+
+productModal.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === productModal) {
+
+            closeProductModal();
+
+        }
+
+    }
+);
+
+
+document
+    .getElementById("modalPlus")
+    .addEventListener("click", () => {
+
+        modalQuantity++;
+
+        document
+            .getElementById("modalQuantity")
+            .textContent = modalQuantity;
+
+    });
+
+
+document
+    .getElementById("modalMinus")
+    .addEventListener("click", () => {
+
+        if (modalQuantity > 1) {
+
+            modalQuantity--;
+
+        }
+
+        document
+            .getElementById("modalQuantity")
+            .textContent = modalQuantity;
+
+    });
+
+
+document
+    .getElementById("modalAdd")
+    .addEventListener("click", () => {
+
+        if (!modalProduct) return;
+
+        addToCart(
+            modalProduct.id,
+            modalQuantity
+        );
+
+        closeProductModal();
+
+    });
+
+
+/* Category tabs */
+
+document
+    .getElementById("categoryTabs")
+    .addEventListener("click", event => {
+
+        const button =
+            event.target.closest("button");
+
+        if (!button) return;
+
+        document
+            .querySelectorAll(".category-tabs button")
+            .forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+        button.classList.add("active");
+
+        currentCategory =
+            button.dataset.category;
+
+        visibleProducts = 8;
+
+        renderProducts();
+
+    });
+
+
+/* Sort */
+
+document
+    .getElementById("sortSelect")
+    .addEventListener("change", event => {
+
+        sortProducts(event.target.value);
+
+    });
+
+
+/* Load more */
+
+document
+    .getElementById("loadMoreBtn")
+    .addEventListener("click", () => {
+
+        visibleProducts += 4;
+
+        renderProducts();
+
+        if (
+            visibleProducts >= currentProducts.length
+        ) {
+
+            document
+                .getElementById("loadMoreBtn")
+                .style.display = "none";
+
+        }
+
+    });
+
+
+/* Builder */
+
+builderIds.forEach(id => {
+
+    document
+        .getElementById(id)
+        .addEventListener(
+            "change",
+            calculateBuild
+        );
+
+});
+
+
+document
+    .getElementById("addBuildBtn")
+    .addEventListener("click", () => {
+
+        const total = calculateBuild();
+
+        const configuration =
+            getBuildData();
+
+        const existing =
+            cart.find(item => item.id === "build");
+
+        if (existing) {
+
+            existing.quantity++;
+
+        } else {
+
+            cart.push({
+
+                id: "build",
+
+                quantity: 1,
+
+                custom: true,
+
+                price: total,
+
+                configuration
+
+            });
+
+        }
+
+
+        saveCart();
+
+        renderCart();
+
+        showToast(
+            "Ваша сборка добавлена в корзину"
+        );
+
+    });
+
+
+/* Reviews */
+
+document
+    .getElementById("nextReview")
+    .addEventListener("click", () => {
+
+        reviewIndex =
+            (reviewIndex + 1) % reviews.length;
+
+        renderReviews();
+
+    });
+
+
+document
+    .getElementById("prevReview")
+    .addEventListener("click", () => {
+
+        reviewIndex =
+            (reviewIndex - 1 + reviews.length)
+            % reviews.length;
+
+        renderReviews();
+
+    });
+
+
+/* Search result ESC */
 
 document.addEventListener(
     "keydown",
     event => {
 
-        if (
-            event.key !== "Escape"
-        ) return;
-
-
-        closeCart();
+        if (event.key !== "Escape") return;
 
         closeSearch();
 
+        closeProductModal();
 
-        document
-            .querySelectorAll(
-                ".modal"
-            )
-            .forEach(
-                modal =>
-                    modal.classList.remove(
-                        "active"
-                    )
-            );
+        closeCart();
 
     }
 );
 
 
-// ==========================================
-// START
-// ==========================================
+/* Checkout */
 
-renderProducts();
+document
+    .getElementById("checkoutBtn")
+    .addEventListener("click", () => {
 
-renderNewProducts();
+        if (!cart.length) return;
+
+        alert(
+            "Спасибо за заказ в NEXORA!\n\n" +
+            "Следующий этап — подключение " +
+            "реальной формы оформления заказа."
+        );
+
+    });
+
+
+/* ================= INIT ================= */
+
+renderCategories();
+
+sortProducts("popular");
+
+renderDeals();
 
 renderCart();
 
-renderFavorites();
+calculateBuild();
 
-updateCounters();
+renderReviews();
 
-// ==========================================
-// THEME SWITCHER
-// ==========================================
-
-const themeButton =
-    document.getElementById(
-        "themeButton"
-    );
-
-
-// Загружаем сохранённую тему
-const savedTheme =
-    localStorage.getItem(
-        "neonix_theme"
-    );
-
-
-if (savedTheme === "light") {
-
-    document.body.classList.add(
-        "light-theme"
-    );
-
-    if (themeButton) {
-
-        themeButton.textContent =
-            "🌙";
-
-    }
-
-}
-
-
-// Переключение темы
-themeButton?.addEventListener(
-    "click",
-    () => {
-
-        document.body.classList.toggle(
-            "light-theme"
-        );
-
-
-        const isLight =
-            document.body.classList.contains(
-                "light-theme"
-            );
-
-
-        localStorage.setItem(
-            "neonix_theme",
-            isLight
-                ? "light"
-                : "dark"
-        );
-
-
-        themeButton.textContent =
-            isLight
-                ? "🌙"
-                : "☀️";
-
-    }
-);
-
-
-// ==========================================
-// BACK TO TOP
-// ==========================================
-
-const backTop =
-    document.getElementById(
-        "backTop"
-    );
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (!backTop) return;
-
-
-        if (window.scrollY > 500) {
-
-            backTop.classList.add(
-                "visible"
-            );
-
-        } else {
-
-            backTop.classList.remove(
-                "visible"
-            );
-
-        }
-
-    }
-);
-
-
-backTop?.addEventListener(
-    "click",
-    () => {
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
-    }
+console.log(
+    "NEXORA TECH / GAMING initialized."
 );
